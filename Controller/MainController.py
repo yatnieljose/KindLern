@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from View.TitleScreen import *
+from View.Frames.TitleScreen import *
 
 class MainController:
 
@@ -16,3 +16,6 @@ class MainController:
         #self.title_scrn = TitleScreen(self.main_tk)
         #self.title_scrn.grid()
         return(TitleScreen(self.main_tk))
+
+    def load_menu(self):
+        pass

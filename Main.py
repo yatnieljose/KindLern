@@ -1,6 +1,10 @@
 from tkinter import *
 from tkinter import ttk
 from Controller.MainController import *
+from Model.Games import *
+import importlib
+import pkgutil
+import os
 
 #def Main(master):#(Tk):
 
@@ -19,5 +23,10 @@ class Main(Tk):
 if __name__ == "__main__":
     #root = Tk()
     #Main(root)
+    pkg_dir = os.path.dirname(__file__)
+    for (module_loader, name, ispkg) in pkgutil.iter_modules([pkg_dir]):
+        importlib.import_module('.' + name, __package__)
+
+    all_my_base_classes = {cls.__name__: cls for cls in base._MyBase.__subclasses__()}
     root = Main()
     root.mainloop()

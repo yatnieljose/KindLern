@@ -10,8 +10,9 @@ class MainScreen(ttk.Frame):
         ttk.Frame.__init__(self, master)
         self.grid()
 
+        ### Header Frame ###
         self.header_frm = ttk.Frame(self)
-        self.header_frm.grid(row=0)
+        self.header_frm.pack()#.grid(row=0)
 
         cancel_img = Image.open(r'View\Images\cancel_icon.png')
         cancel_ph = ImageTk.PhotoImage(cancel_img)
@@ -42,6 +43,12 @@ class MainScreen(ttk.Frame):
         self.girl_lbl.grid(column=3, row=0)
 
         self.cancel_lbl.bind('<ButtonPress>', self.exit_main)
+
+        ### Container Frame ###
+        self.container_frm = ttk.Frame(self)
+        self.container_frm.pack()
+
+        
 
     def exit_main(self, event):
         self.destroy()

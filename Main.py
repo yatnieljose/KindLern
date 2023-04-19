@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from Controller.MainController import *
-from Model.Games import *
+from Model.Games.MatchAnimal import MatchAnimal
 
 #def Main(master):#(Tk):
 
@@ -20,5 +20,8 @@ class Main(Tk):
 if __name__ == "__main__":
     #root = Tk()
     #Main(root)
+    my_game = MatchAnimal()
+    print(my_game.get_options())
+    print(my_game.get_answer())
     root = Main()
     root.mainloop()

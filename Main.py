@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from Controller.MainController import *
-from Model.Games.MatchAnimal import MatchAnimal
+#from Model.Games.MatchAnimal import MatchAnimal
 
 #def Main(master):#(Tk):
 

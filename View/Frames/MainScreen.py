@@ -1,7 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
-from TileGame import TileGame
+from View.Frames.TileGame import TileGame
+from View.Frames.MenuFrm import MenuFrm
 
 class MainScreen(ttk.Frame):
 

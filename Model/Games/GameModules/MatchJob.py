@@ -1,10 +1,10 @@
-from . import Game
+#from . import Game
 from os import listdir 
 from os.path import isfile, join, basename, dirname
 from random import choices, choice
 import platform 
 
-class MatchAnimal:
+class MatchJob:
 
     def __init__(self):
 
@@ -12,11 +12,11 @@ class MatchAnimal:
         self.options = {}
         self.name = "Match the Job"
 
-        path_mkr = self.add_path(self.resource_path)
+        """"path_mkr = self.add_path(self.resource_path)
         img_ls = self.load_options(self.resource_path)
         img_ls = choices(img_ls, k=4)
         
         for x in img_ls:
             self.options[basename(x).split(".")[0].title()] = path_mkr(x)
         
-        self.answer = choice(list(self.options.keys()))
+        self.answer = choice(list(self.options.keys()))"""

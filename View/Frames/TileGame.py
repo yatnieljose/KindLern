@@ -13,10 +13,10 @@ class TileGame(ttk.Frame):
         self.opt_lbl_ls = []
 
         i = 0
-        for text, img_path in options.items():
+        for txt, img_path in options.items():
             img = Image.open(img_path)
             ph = ImageTk.PhotoImage(img)
-            self.opt_lbl_ls[i] = ttk.Label(self, text=text, image=img).pack()
+            self.opt_lbl_ls[i] = ttk.Label(self, text=txt, image=ph)
             i += 1
         """
         self.game_name = game_name

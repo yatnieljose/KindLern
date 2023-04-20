@@ -22,6 +22,5 @@ if __name__ == "__main__":
     #Main(root)
     my_game = MatchAnimal()
     print(my_game.get_options())
-    print(my_game.get_answer())
     root = Main()
     root.mainloop()

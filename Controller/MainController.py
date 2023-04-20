@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from View.Frames.TitleScreen import *
 from View.Frames.MainScreen import *
+from Model.Games.GameModules.MatchAnimal import MatchAnimal
+from Model.Games.GameModules.MatchJob import MatchJob
 
 class MainController:
 
@@ -10,6 +12,7 @@ class MainController:
         self.main_tk = master
         self.current_frm = None
         self.load_title()
+        self.game = None
         #self.current_frm = self.load_title()
         #self.current_frm.grid()
         #self.current_frm.grid()
@@ -22,3 +25,9 @@ class MainController:
 
     def load_main(self):
         self.current_frm = MainScreen(self.main_tk, self)
+    
+    def load_match_animal(self):
+        self.game = MatchAnimal()
+
+    def get_options(self):
+        self.game.get_options()

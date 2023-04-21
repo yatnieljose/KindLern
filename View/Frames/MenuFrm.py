@@ -22,7 +22,7 @@ class MenuFrm(ttk.Frame):
         self.job_match_lbl.img = job_mtc_ph
         self.job_match_lbl.config(image=self.job_match_lbl.img, text="Match the Job")
         self.job_match_lbl.grid(column=1, row=0)
-        self.job_match_lbl.bind("<ButtonPress", main_scrn.load_match_job)
+        self.job_match_lbl.bind("<ButtonPress>", main_scrn.load_match_job)
 
     def close(self):
 

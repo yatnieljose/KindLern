@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 from Controller.MainController import *
-import global_variables
 #from Model.Games.MatchAnimal import MatchAnimal
 
 #def Main(master):#(Tk):

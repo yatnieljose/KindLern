@@ -1,7 +1,7 @@
 #from . import Game
 from os import listdir 
 from os.path import isfile, join, basename, dirname
-from random import choices, choice
+from random import choices, choice, sample
 import platform 
 
 class MatchAnimal:
@@ -14,7 +14,8 @@ class MatchAnimal:
 
         path_mkr = self.add_path(self.resource_path)
         img_ls = self.load_options(self.resource_path)
-        img_ls = choices(img_ls, k=4)
+        img_ls = sample(img_ls, k=4)
+        print(img_ls)
         
         for x in img_ls:
             self.options[basename(x).split(".")[0].title()] = path_mkr(x)
@@ -39,9 +40,9 @@ class MatchAnimal:
 
     def add_path(self, path):
         if "Windows" in platform.platform():
-            return lambda f : path + "\\" + f 
+            return lambda f : path + "\\GameImg\\Animals\\" + f 
         else:
-            return lambda f : path + "/" + f
+            return lambda f : path + "/GameImg/Animals/" + f
 
     def get_name(self):
         return(self.name)

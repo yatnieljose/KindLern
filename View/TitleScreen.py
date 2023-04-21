@@ -5,7 +5,6 @@ from PIL import Image, ImageTk
 class TitleScreen(ttk.Frame):
 
     def __init__(self, master, controller):
-        #self.master = master
         self.controller = controller
         ttk.Frame.__init__(self, master)
         self.grid()

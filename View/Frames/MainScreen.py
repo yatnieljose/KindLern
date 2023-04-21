@@ -7,14 +7,19 @@ from View.Frames.MenuFrm import MenuFrm
 class MainScreen(ttk.Frame):
 
     def __init__(self, master, controller):
-        self.controller = controller
 
         ttk.Frame.__init__(self, master)
         self.grid()
 
         ### Header Frame ###
         self.header_frm = ttk.Frame(self)
-        self.header_frm.pack()#.grid(row=0)
+        self.header_frm.grid(row=0)#pack()#.grid(row=0)
+        ### Container Frame ###
+        self.container_frm = ttk.Frame(self)
+        self.container_frm.grid(row=1)
+
+        self.controller = controller
+        self.current_frm = MenuFrm(self.container_frm, self)
 
         cancel_img = Image.open(r'View/Images/cancel_icon.png')
         cancel_ph = ImageTk.PhotoImage(cancel_img)
@@ -46,27 +51,30 @@ class MainScreen(ttk.Frame):
 
         self.cancel_lbl.bind('<ButtonPress>', self.exit)
 
-        ### Container Frame ###
-        self.container_frm = ttk.Frame(self)
-        #self.container_frm.pack()
+        ### current Frame ###
+        #self.current_frm.pack()
+        #self.current_frm = 
 
         """animal_mtc_img = Image.open(r'Model/Games/GameImg/Game/animal_match.png')
         animal_match_ph = ImageTk.PhotoImage(animal_mtc_img)
-        self.animal_match_lbl = ttk.Label(self.container_frm, text="Match the Animal", image=animal_mtc_img)
+        self.animal_match_lbl = ttk.Label(self.current_frm, text="Match the Animal", image=animal_mtc_img)
         self.animal_match_lbl.grid(column=0, row=0)
         self.animal_match_lbl.bind('<ButtonPress>', self.load_animal_mtc)"""
 
         
 
     def exit(self, event):
-        if self.container_frm is MenuFrm:
+        #print(type(MenuFrm))
+        if type(self.current_frm).__name__ is "MenuFrm":
             self.destroy()
             self.controller.load_title()
         else:
-            self.container_frm.destroy()
-            self.container_frm = MenuFrm(self, self.controller)
+            self.current_frm.destroy()
+            self.current_frm = MenuFrm(self.container_frm, self)
 
-    def load_animal_mtc(self, event):
+    def load_match_animal(self, event):#, *_args):#, event):
         self.controller.load_match_animal()
-        self.container_frm.destroy()
-        self.container_frm = TileGame(self, self.controller, self.controller.get_options())
+        self.current_frm.destroy()
+        opt_ls = self.controller.get_options()
+        ans = self.controller.get_answer()
+        self.current_frm = TileGame(self.container_frm, self.controller, opt_ls, ans, self)#, self.controller.get_options())

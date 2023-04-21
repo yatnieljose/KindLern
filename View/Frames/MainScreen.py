@@ -80,7 +80,7 @@ class MainScreen(ttk.Frame):
         self.current_frm = TileGame(self.container_frm, self.controller, opt_ls, ans, self)
 
     def load_match_job(self, event):
-        self.load_match_job()
+        self.controller.load_match_job()
         self.current_frm.destroy()
         opt_ls = self.controller.get_options()
         ans = self.controller.get_answer()

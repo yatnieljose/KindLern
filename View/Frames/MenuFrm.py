@@ -20,10 +20,18 @@ class MenuFrm(ttk.Frame):
         job_mtc_ph = ImageTk.PhotoImage(job_mtc_img)
         self.job_match_lbl = ttk.Label(self, image=job_mtc_ph)
         self.job_match_lbl.img = job_mtc_ph
-        self.job_match_lbl.config(image=self.job_match_lbl.img, text="Match the Job")
+        self.job_match_lbl.config(image=self.job_match_lbl.img, text="Match the Job", compound="center", font=("Comic Sans MS", 20))
         self.job_match_lbl.grid(column=1, row=0)
         self.job_match_lbl.bind("<ButtonPress>", main_scrn.load_match_job)
 
-    def close(self):
+        az_type_img = Image.open(r"Model/Games/GameImg/Game/type_letter.png")
+        az_type_ph = ImageTk.PhotoImage(az_type_img)
+        self.az_type_lbl = ttk.Label(self, image=az_type_ph)
+        self.az_type_lbl.img = az_type_ph
+        self.az_type_lbl.config(image=self.az_type_lbl.img, text="Type the Letter", compound="center", font=("Comic Sans MS", 20))
+        self.az_type_lbl.grid(column=2, row=0)
+        self.az_type_lbl.bind("<ButtonPress>", main_scrn.load_type_letter)
 
-        self.destroy()
+    """def close(self):
+
+        self.destroy()"""

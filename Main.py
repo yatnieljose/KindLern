@@ -20,6 +20,6 @@ class Main(Tk):
 if __name__ == "__main__":
     #root = Tk()
     #Main(root)
-    my_game = KeyGame()
+    #my_game = KeyGame()
     root = Main()
     root.mainloop()

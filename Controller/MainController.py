@@ -4,6 +4,7 @@ from View.Frames.TitleScreen import *
 from View.Frames.MainScreen import *
 from Model.Games.MatchAnimal import MatchAnimal
 from Model.Games.MatchJob import MatchJob
+from Model.Games.TypeLetter import TypeLetter
 
 class MainController:
 
@@ -23,8 +24,17 @@ class MainController:
     def load_match_animal(self):#, *_args):
         self.game = MatchAnimal()
 
+    def load_match_job(self):
+        self.game = MatchJob()
+
+    def load_type_letter(self):
+        self.game = TypeLetter()
+
     def get_options(self):
         return(self.game.get_options())
     
     def get_answer(self):
         return(self.game.get_answer())
+    
+    def get_game(self):
+        return(self.game)

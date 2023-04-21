@@ -21,31 +21,6 @@ class TileGame(ttk.Frame):
         self.opt_lbl_ls = [None, None, None, None]
         self.load_selections()
 
-
-
-        """for x in self.opt_lbl_ls:
-            x.pack()"""
-        """
-        self.game_name = game_name
-
-        ttk.Frame.__init__(self, master, padding=10)
-        self.grid()
-
-        img = Image.open(pic_path)
-        tile_img = ImageTk.PhotoImage(img)
-        self.tile_lbl = ttk.Label(self, image=tile_img)
-        self.tile_lbl.img = tile_img
-        self.tile_lbl.config(image=self.tile_lbl.img)
-        self.tile_lbl.grid()
-
-        name_frm = ttk.Frame(master=self)
-        name_frm.grid()
-
-        ttk.Label(name_frm, text=self.game_name, font="Comic Sans MS", foreground='#ffe599ff').grid()
-
-        self.tile_lbl.bind('<ButtonPress>', self.mouse_press)
-        """
-
     def load_selections(self):
 
         i = 0
@@ -58,7 +33,6 @@ class TileGame(ttk.Frame):
             self.opt_lbl_ls[i].bind("<ButtonPress>", self.selected)
             i += 1
 
-        
         self.opt_lbl_ls[0].grid(row=0, column=0)
         self.opt_lbl_ls[1].grid(row=0, column=1)
         self.opt_lbl_ls[2].grid(row=1, column=0)
@@ -68,8 +42,6 @@ class TileGame(ttk.Frame):
         self.ans_lbl.grid()
 
     def selected(self, event):
-        #print(event.widget["text"])
-        #print(self.answer)
         for x in self.opt_lbl_ls:
             x.destroy()
         img = Image.open(self.options[self.answer])
@@ -81,4 +53,8 @@ class TileGame(ttk.Frame):
         self.opt_lbl_ls.grid()
 
     def next_game(self, event):
-        self.main_scrn.load_match_animal(event)
+        game = self.controller.get_game().get_name()
+        if game == "M_Animal":
+            self.main_scrn.load_match_animal(event)
+        elif game == "M_Job":
+            self.main_scrn.load_match_job(event)

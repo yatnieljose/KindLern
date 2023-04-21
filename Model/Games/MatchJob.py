@@ -10,7 +10,7 @@ class MatchJob:
 
         self.resource_path = dirname(__file__)
         self.options = {}
-        self.name = "Match the Job"
+        self.name = "M_Job"
 
         path_mkr = self.add_path(self.resource_path)
         img_ls = self.load_options(self.resource_path)

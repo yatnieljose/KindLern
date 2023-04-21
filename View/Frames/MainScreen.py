@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 from View.Frames.TileGame import TileGame
+from View.Frames.KeyGame import KeyGame
 from View.Frames.MenuFrm import MenuFrm
 
 class MainScreen(ttk.Frame):
@@ -84,4 +85,11 @@ class MainScreen(ttk.Frame):
         self.current_frm.destroy()
         opt_ls = self.controller.get_options()
         ans = self.controller.get_answer()
-        self.current_frm(self.container_frm, self.controller, opt_ls, ans, self)
+        self.current_frm = TileGame(self.container_frm, self.controller, opt_ls, ans, self)
+
+    def load_type_letter(self, event):
+        self.controller.load_type_letter()
+        self.current_frm.destroy()
+        opt_ls = self.controller.get_options()
+        ans = self.controller.get_answer()
+        self.current_frm = KeyGame(self.container_frm, self.controller, opt_ls, ans)

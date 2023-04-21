@@ -15,7 +15,6 @@ class MatchAnimal:
         path_mkr = self.add_path(self.resource_path)
         img_ls = self.load_options(self.resource_path)
         img_ls = sample(img_ls, k=4)
-        print(img_ls)
         
         for x in img_ls:
             self.options[basename(x).split(".")[0].title()] = path_mkr(x)

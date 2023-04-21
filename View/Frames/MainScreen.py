@@ -72,9 +72,16 @@ class MainScreen(ttk.Frame):
             self.current_frm.destroy()
             self.current_frm = MenuFrm(self.container_frm, self)
 
-    def load_match_animal(self, event):#, *_args):#, event):
+    def load_match_animal(self, event):
         self.controller.load_match_animal()
         self.current_frm.destroy()
         opt_ls = self.controller.get_options()
         ans = self.controller.get_answer()
-        self.current_frm = TileGame(self.container_frm, self.controller, opt_ls, ans, self)#, self.controller.get_options())
+        self.current_frm = TileGame(self.container_frm, self.controller, opt_ls, ans, self)
+
+    def load_match_job(self, event):
+        self.load_match_job()
+        self.current_frm.destroy()
+        opt_ls = self.controller.get_options()
+        ans = self.controller.get_answer()
+        self.current_frm(self.container_frm, self.controller, opt_ls, ans, self)

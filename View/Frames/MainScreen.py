@@ -26,8 +26,8 @@ class MainScreen(ttk.Frame):
         self.controller = controller
         self.current_frm = MenuFrm(self.container_frm, self)
 
-        width = 800 // 2
-        height = 480 //2
+        width = 800 // 3
+        height = 480 // 3
 
         cancel_img = Image.open(r'View/Images/cancel_icon.png')
         cancel_img = cancel_img.resize((int(width * 54 / 694), int(height * 54 / 369)))
@@ -37,6 +37,14 @@ class MainScreen(ttk.Frame):
         self.cancel_lbl.config(image=self.cancel_lbl.img)
         #self.cancel_lbl.grid(column=0, row=0)
         self.cancel_lbl.pack(side="left", anchor="nw")#side="left", anchor="nw")
+
+        """prompt_img = Image.open(r'View/Images/prompt.png')
+        prompt_img = prompt_img.resize((750, 180))
+        prompt_ph = ImageTk.PhotoImage(prompt_img)
+        self.prompt_lbl = ttk.Label(self.header_frm, image=prompt_ph)
+        self.prompt_lbl.img = prompt_ph
+        self.prompt_lbl.config(image=self.prompt_lbl.img)
+        self.prompt_lbl.pack(side="left", anchor="center")"""
 
         boy_img = Image.open(r'View/Images/kind_b.png')
         boy_img = boy_img.resize((int(width * 147 / 694), int(height * 174 / 369)))

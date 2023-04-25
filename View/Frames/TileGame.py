@@ -22,14 +22,10 @@ class TileGame(ttk.Frame):
         self.load_selections()
 
     def load_selections(self):
-        
-        #img_w = int(self.master.winfo_width() / 2)
-        #img_h = int(self.master.winfo_height() / 2)
 
         i = 0
         for txt, img_path in self.options.items():
             img = Image.open(img_path)
-            #img = img.resize((img_w, img_h), Image.ANTIALIAS)
             ph = ImageTk.PhotoImage(img)
             self.opt_lbl_ls[i] = ttk.Label(self.opt_frm, text=txt, image=ph)
             self.opt_lbl_ls[i].img = ph

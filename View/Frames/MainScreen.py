@@ -16,13 +16,12 @@ class MainScreen(ttk.Frame):
         style.configure("KindLern.TFrame", background="white")
 
         ### Header Frame ###
-        self.header_frm = ttk.Frame(master=self)#, style="KindLern.TFrame")
-        self.header_frm.pack()#grid(row=0)#pack()#.grid(row=0)
+        self.header_frm = ttk.Frame(master=self)
+        self.header_frm.pack()
         
         ### Container Frame ###
-        self.container_frm = ttk.Frame(master=self)#, style="KindLern.TFrame")
-        self.container_frm.pack()#grid(row=1)
-
+        self.container_frm = ttk.Frame(master=self)
+        self.container_frm.pack()
         self.controller = controller
         self.current_frm = MenuFrm(self.container_frm, self)
 
@@ -35,16 +34,7 @@ class MainScreen(ttk.Frame):
         self.cancel_lbl = ttk.Label(self.header_frm, image=cancel_ph)
         self.cancel_lbl.img = cancel_ph
         self.cancel_lbl.config(image=self.cancel_lbl.img)
-        #self.cancel_lbl.grid(column=0, row=0)
-        self.cancel_lbl.pack(side="left", anchor="nw")#side="left", anchor="nw")
-
-        """prompt_img = Image.open(r'View/Images/prompt.png')
-        prompt_img = prompt_img.resize((750, 180))
-        prompt_ph = ImageTk.PhotoImage(prompt_img)
-        self.prompt_lbl = ttk.Label(self.header_frm, image=prompt_ph)
-        self.prompt_lbl.img = prompt_ph
-        self.prompt_lbl.config(image=self.prompt_lbl.img)
-        self.prompt_lbl.pack(side="left", anchor="center")"""
+        self.cancel_lbl.pack(side="left", anchor="nw")
 
         boy_img = Image.open(r'View/Images/kind_b.png')
         boy_img = boy_img.resize((int(width * 147 / 694), int(height * 174 / 369)))
@@ -52,7 +42,6 @@ class MainScreen(ttk.Frame):
         self.boy_lbl = ttk.Label(self.header_frm, image=boy_ph)
         self.boy_lbl.img = boy_ph
         self.boy_lbl.config(image=self.boy_lbl.img)
-        #self.boy_lbl.grid(column=1, row=0)
         self.boy_lbl.pack(side="left", anchor="center")
 
         logo_img = Image.open(r'View/Images/logo.png')
@@ -61,7 +50,6 @@ class MainScreen(ttk.Frame):
         self.logo_lbl = ttk.Label(self.header_frm, image=logo_ph)
         self.logo_lbl.img = logo_ph
         self.logo_lbl.config(image=self.logo_lbl.img)
-        #self.logo_lbl.grid(column=2, row=0)
         self.logo_lbl.pack(side="left", anchor="center")
 
         girl_img = Image.open(r'View/Images/kind_g.png')
@@ -70,25 +58,11 @@ class MainScreen(ttk.Frame):
         self.girl_lbl = ttk.Label(self.header_frm, image=girl_ph)
         self.girl_lbl.img = girl_ph
         self.girl_lbl.config(image=self.girl_lbl.img)
-        #self.girl_lbl.grid(column=3, row=0)
         self.girl_lbl.pack(side="left", anchor="center")
 
         self.cancel_lbl.bind('<ButtonPress>', self.exit)
 
-        ### current Frame ###
-        #self.current_frm.pack()
-        #self.current_frm = 
-
-        """animal_mtc_img = Image.open(r'Model/Games/GameImg/Game/animal_match.png')
-        animal_match_ph = ImageTk.PhotoImage(animal_mtc_img)
-        self.animal_match_lbl = ttk.Label(self.current_frm, text="Match the Animal", image=animal_mtc_img)
-        self.animal_match_lbl.grid(column=0, row=0)
-        self.animal_match_lbl.bind('<ButtonPress>', self.load_animal_mtc)"""
-
-        
-
     def exit(self, event):
-        #print(type(MenuFrm))
         if type(self.current_frm).__name__ is "MenuFrm":
             self.destroy()
             self.controller.load_title()

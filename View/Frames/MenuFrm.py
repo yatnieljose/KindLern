@@ -18,7 +18,7 @@ class MenuFrm(ttk.Frame):
         self.animal_match_lbl = ttk.Label(self, text="Animal Match", foreground="#FFFFCC",image=animal_mtc_ph)
         self.animal_match_lbl.img = animal_mtc_ph
         self.animal_match_lbl.config(image=self.animal_match_lbl.img,compound="center", font=("Comic Sans MS", 20))
-        self.animal_match_lbl.grid(column=0, row=0)#pack()#grid(column=0, row=0)
+        self.animal_match_lbl.grid(column=0, row=0)
         self.animal_match_lbl.bind('<ButtonPress>', main_scrn.load_match_animal)
 
         job_mtc_img = Image.open(r"Model/Games/GameImg/Game/job_match.png")
@@ -38,7 +38,3 @@ class MenuFrm(ttk.Frame):
         self.az_type_lbl.config(image=self.az_type_lbl.img, compound="center", font=("Comic Sans MS", 20))
         self.az_type_lbl.grid(column=2, row=0)
         self.az_type_lbl.bind("<ButtonPress>", main_scrn.load_type_letter)
-
-    """def close(self):
-
-        self.destroy()"""

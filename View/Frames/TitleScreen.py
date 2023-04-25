@@ -11,7 +11,6 @@ class TitleScreen(ttk.Frame):
         ttk.Frame.__init__(self, master)
         self.grid()
 
-        #img = Image.open(r"View\Images\title_img.png")
         img = Image.open(r"View/Images/title_img.png").resize((800, 480))
         title_img = ImageTk.PhotoImage(img)
         self.title_lbl = ttk.Label(self, image=title_img)
@@ -22,8 +21,5 @@ class TitleScreen(ttk.Frame):
         self.title_lbl.bind('<ButtonPress>', self.mouse_press)
 
     def mouse_press(self, event):
-        """global prev
-        print('alive\n')
-        prev = event"""
         self.destroy()
         self.controller.load_main()

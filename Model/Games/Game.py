@@ -1,3 +1,4 @@
+"""Need to implement for greater versatility of the program"""
 class Game():
 
     def __init__(self, options, answer):

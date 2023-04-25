@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import ttk
 from View.Frames.TitleScreen import *
 from View.Frames.MainScreen import *
 from Model.Games.MatchAnimal import MatchAnimal
@@ -21,7 +20,7 @@ class MainController:
     def load_main(self):
         self.main_frm = MainScreen(self.main_tk, self)
     
-    def load_match_animal(self):#, *_args):
+    def load_match_animal(self):
         self.game = MatchAnimal()
 
     def load_match_job(self):

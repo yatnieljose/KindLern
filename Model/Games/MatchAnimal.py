@@ -1,7 +1,6 @@
-#from . import Game
 from os import listdir 
-from os.path import isfile, join, basename, dirname
-from random import choices, choice, sample
+from os.path import basename, dirname
+from random import choice, sample
 import platform 
 
 class MatchAnimal:

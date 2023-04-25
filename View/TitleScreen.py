@@ -19,9 +19,6 @@ class TitleScreen(ttk.Frame):
         self.title_lbl.bind('<ButtonPress>', self.mouse_press)
 
     def mouse_press(self, event):
-        """global prev
-        print('alive\n')
-        prev = event"""
         self.destroy()
         self.controller.load_menu()
         

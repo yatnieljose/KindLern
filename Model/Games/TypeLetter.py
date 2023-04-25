@@ -19,3 +19,9 @@ class TypeLetter:
     
     def get_answer(self):
         return(self.answer)
+    
+    def check_answer(self, playerAns):
+        if (self.answer == playerAns):
+            return(True)
+        else:
+            return(False)

@@ -12,7 +12,7 @@ class TitleScreen(ttk.Frame):
         self.grid()
 
         #img = Image.open(r"View\Images\title_img.png")
-        img = Image.open(r"View/Images/title_img.png")
+        img = Image.open(r"View/Images/title_img.png").resize((800, 480))
         title_img = ImageTk.PhotoImage(img)
         self.title_lbl = ttk.Label(self, image=title_img)
         self.title_lbl.img = title_img

@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from Controller.MainController import *
-from Model.Games.MatchAnimal import MatchAnimal
+from Model.Games.TypeLetter import TypeLetter
 
 #def Main(master):#(Tk):
 
@@ -9,8 +9,10 @@ from Model.Games.MatchAnimal import MatchAnimal
 class Main(Tk):
     def __init__(self):
         Tk.__init__(self)
+        self.configure(bg="white")
+        self.geometry("800x480")
         self.main_controller = MainController(self)
-        width, height = self.winfo_screenwidth, self.winfo_screenheight
+        WIDTH, HEIGHT = self.winfo_screenwidth, self.winfo_screenheight
         #self.geometry('%dx%d+0+0' % (width, height))
         #### fullscreen
         #self.attributes('-fullscreen', True)
@@ -20,8 +22,6 @@ class Main(Tk):
 if __name__ == "__main__":
     #root = Tk()
     #Main(root)
-    my_game = MatchAnimal()
-    print(my_game.get_options())
-    print(my_game.get_answer())
+    #my_game = KeyGame()
     root = Main()
     root.mainloop()
